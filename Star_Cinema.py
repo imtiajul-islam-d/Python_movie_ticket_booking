@@ -93,13 +93,16 @@ while True:
     elif flag == 2:
         movieId = int(input("Enter show ID: "))
         hall.view_available_seats(movieId)
+    elif flag == 3:
+        howManySeat = int(input("How many seat you want to book?: "))        
+        for x in range(howManySeat):
+            print(f"For the {x+1} one:- ")
+            mID = int(input("Please enter a movie ID: "))
+            seatRow = int(input("Please enter which row you want to seat: "))
+            seatCol= int(input("Please enter which column you want to seat: "))
+            hall.book_seats(mID,(seatRow,seatCol))
     elif flag == 4:
         break
     else:
         continue
 
-# hall.book_seats(3,(10,11))
-# hall.book_seats(3,(10,10))
-# hall.book_seats(3,(3,10))
-
-# hall.view_available_seats(3)
